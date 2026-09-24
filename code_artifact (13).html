@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title">قمة الإبداع | لخدمات التعقيم والتنظيف والصيانة الفاخرة في عمان</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="شركة قمة الإبداع لخدمات التعقيم والتنظيف والصيانة في عمان، الأردن. نقدم خدمات VIP تشمل مكافحة حشرات البق، كشف تسربات المياه، جلي رخام وسيراميك، تعقيم خزانات، والتنظيف العميق.">
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS with Custom Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        green: {
+                            light: '#6ee7b7',
+                            DEFAULT: '#10b981', // Emerald Green
+                            dark: '#047857',
+                        },
+                        gray: {
+                            text: '#94a3b8', // slate-400
+                            border: '#334155' // slate-700
+                        }
+                    },
+                    backgroundImage: {
+                        'green-gradient': 'linear-gradient(135deg, #047857, #10b981, #059669)',
+                        'dark-gradient': 'linear-gradient(to bottom, rgba(15,23,42,0.85), rgba(15,23,42,1))',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0f172a; /* Slate 900 - Lighter than black, very elegant */
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        .text-gradient-green {
+            background: linear-gradient(135deg, #10b981, #34d399, #047857);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .border-gradient-green {
+            border: 1px solid;
+            border-image-slice: 1;
+            border-width: 1px;
+            border-image-source: linear-gradient(135deg, #10b981, #047857);
+        }
+
+        .hover-green-glow:hover {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+            border-color: #10b981;
+            transform: translateY(-5px);
+        }
+
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        .btn-pulse {
+            animation: pulse-green 2s infinite;
+        }
+        
+        .map-filter {
+            filter: grayscale(40%) contrast(120%);
+        }
+        
+        /* Language Transition */
+        * {
+            transition: text-align 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-green selection:text-white">
+
+    <header class="fixed w-full top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-gray-border transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer" data-aos="fade-down" data-aos-duration="1000">
+                    <a href="#" class="flex flex-col items-start">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-shield-halved text-green text-2xl"></i>
+                            <span class="text-2xl font-bold text-gradient-green tracking-wider" data-i18n="brand_name">قمة الإبداع</span>
+                        </div>
+                        <span class="text-[10px] text-gray-text tracking-widest uppercase mt-1" data-i18n="brand_sub">خدمات التعقيم والصيانة</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:block" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+                    <ul class="flex gap-8">
+                        <li><a href="#hero" class="text-white hover:text-green transition-colors text-sm font-semibold" data-i18n="nav_home">الرئيسية</a></li>
+                        <li><a href="#well-insulation" class="text-white hover:text-green transition-colors text-sm font-semibold" data-i18n="nav_well">عزل الآبار</a></li>
+                        <li><a href="#services" class="text-white hover:text-green transition-colors text-sm font-semibold" data-i18n="nav_services">خدماتنا</a></li>
+                        <li><a href="#location" class="text-white hover:text-green transition-colors text-sm font-semibold" data-i18n="nav_location">الموقع ومواعيد العمل</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Actions: Call & Lang -->
+                <div class="hidden md:flex items-center gap-4" data-aos="fade-down" data-aos-duration="1000">
+                    <!-- Language Switcher -->
+                    <button onclick="toggleLanguage()" class="flex items-center gap-2 text-gray-text hover:text-green transition-colors border border-gray-border px-3 py-1.5 rounded-full text-sm">
+                        <i class="fas fa-globe"></i>
+                        <span id="lang-switch-text">English</span>
+                    </button>
+                    <!-- CTA -->
+                    <a href="tel:+962790000000" class="bg-green-gradient text-white font-bold py-2 px-6 rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 shadow-lg shadow-green/20">
+                        <span data-i18n="nav_call">اتصل بنا الآن</span>
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Buttons -->
+                <div class="md:hidden flex items-center gap-3">
+                    <button onclick="toggleLanguage()" class="text-gray-text hover:text-green">
+                        <i class="fas fa-globe text-xl"></i>
+                    </button>
+                    <button class="text-green hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="relative h-screen flex items-center justify-center hero-bg">
+            <div class="absolute inset-0 bg-dark-gradient"></div>
+            
+            <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
+                <div data-aos="zoom-in" data-aos-duration="1200">
+                    <div class="inline-block p-4 rounded-full bg-slate-800/50 border border-green/30 backdrop-blur-sm mb-6">
+                        <i class="fas fa-shield-virus text-5xl text-green"></i>
+                    </div>
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-i18n="hero_title">
+                    الرفاهية في <span class="text-gradient-green">النظافة والصيانة</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-i18n="hero_desc">
+                    نقدم لك في "قمة الإبداع" حلولاً متكاملة بأعلى معايير الجودة والاحترافية. من التعقيم العميق إلى الصيانة الدقيقة، نحن هنا لنجعل بيئتك أكثر نقاءً وصحة.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
+                    <a href="tel:+962790000000" class="btn-pulse bg-green-gradient text-white font-bold text-lg py-4 px-10 rounded-full w-full sm:w-auto flex justify-center items-center gap-3 transition-transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-phone-volume"></i>
+                        <span data-i18n="hero_btn_call">طلب خدمة فورية</span>
+                    </a>
+                    <a href="#services" class="border border-green text-green hover:bg-green hover:text-white font-bold text-lg py-4 px-10 rounded-full w-full sm:w-auto transition-all duration-300" data-i18n="hero_btn_explore">
+                        استكشف خدماتنا
+                    </a>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce" data-aos="fade-up" data-aos-delay="1000">
+                <a href="#services" class="text-green opacity-70 hover:opacity-100 transition-opacity flex flex-col items-center gap-2">
+                    <span class="text-xs uppercase tracking-widest text-gray-text" data-i18n="scroll_down">اكتشف المزيد</span>
+                    <i class="fas fa-chevron-down text-xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <section id="well-insulation" class="py-24 bg-slate-800 relative border-t border-gray-border overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-green opacity-5 blur-[120px] rounded-full pointer-events-none"></div>
+            
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-green text-sm font-bold tracking-widest uppercase mb-2 block" data-i18n="well_tag">خدمة احترافية جديدة</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4" data-i18n="well_title">عزل آبار المياه <span class="text-gradient-green">في الأردن</span></h2>
+                    <p class="text-gray-text max-w-2xl mx-auto mb-6 text-lg" data-i18n="well_desc">نعمل على عزل آبار المياه لمنع تسرب المياه السطحية والملوثات، والحفاظ على جودة المياه لبيئة نظيفة وصحية وآمنة لعائلتك.</p>
+                    <div class="h-1 w-24 bg-green mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                    <div class="space-y-8" data-aos="fade-up">
+                        <!-- Why -->
+                        <div class="bg-slate-900 border border-gray-border rounded-2xl p-8 hover-green-glow transition-all duration-300 shadow-lg">
+                            <h3 class="text-2xl font-bold text-green mb-6 flex items-center gap-3">
+                                <i class="fas fa-shield-halved"></i>
+                                <span data-i18n="well_why_title">لماذا يجب عزل البئر؟</span>
+                            </h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-green mt-1"></i>
+                                    <span class="text-slate-300" data-i18n="well_why_1">حماية من التلوث والسلوكيات البيئية الضارة.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-green mt-1"></i>
+                                    <span class="text-slate-300" data-i18n="well_why_2">ضمان جودة المياه وصحة الأسرة.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-green mt-1"></i>
+                                    <span class="text-slate-300" data-i18n="well_why_3">الامتثال للمعايير الصحية والمحلية.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="bg-slate-900 border border-gray-border rounded-2xl p-8 hover-green-glow transition-all duration-300 shadow-lg">
+                            <h3 class="text-2xl font-bold text-green mb-6 flex items-center gap-3">
+                                <i class="fas fa-star"></i>
+                                <span data-i18n="well_feat_title">مميزات خدماتنا في العزل</span>
+                            </h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-award text-green mt-1"></i>
+                                    <span class="text-slate-300" data-i18n="well_feat_1">استخدام مواد عالية الجودة (الأسمنت النقي، البنتونايت) وطرق احترافية.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-award text-green mt-1"></i>
+                                    <span class="text-slate-300" data-i18n="well_feat_2">خبرة محلية في الأردن مع مراعاة المعايير الصحية.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-award text-green mt-1"></i>
+                                    <span class="text-slate-300" data-i18n="well_feat_3">خدمة ما بعد العزل لضمان التثبيت الجيد والسلامة.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Steps Timeline -->
+                    <div class="bg-slate-900 border border-gray-border rounded-2xl p-8 hover-green-glow transition-all duration-300 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-2xl font-bold text-green mb-8 flex items-center gap-3">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span data-i18n="well_steps_title">خطوات عزل البئر الاحترافية</span>
+                        </h3>
+                        
+                        <div class="relative border-s-2 border-gray-border ps-8 space-y-6 rtl:border-r-2 rtl:border-l-0 rtl:pr-8 rtl:pl-0 ltr:border-l-2 ltr:border-r-0 ltr:pl-8 ltr:pr-0">
+                            <!-- Step 1 -->
+                            <div class="relative" data-aos="fade-in" data-aos-delay="100">
+                                <div class="absolute -start-[49px] top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border-2 border-green text-green font-bold text-sm shadow-[0_0_10px_rgba(16,185,129,0.4)] z-10">1</div>
+                                <div class="bg-slate-800 border border-gray-border p-4 rounded-xl hover:border-green transition-colors">
+                                    <h4 class="text-white font-bold mb-1" data-i18n="step_1_title">التقييم الأولي</h4>
+                                    <p class="text-gray-400 text-sm" data-i18n="step_1_desc">تقييم أولي لحالة البئر وعمقه.</p>
+                                </div>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="relative" data-aos="fade-in" data-aos-delay="200">
+                                <div class="absolute -start-[49px] top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border-2 border-green text-green font-bold text-sm shadow-[0_0_10px_rgba(16,185,129,0.4)] z-10">2</div>
+                                <div class="bg-slate-800 border border-gray-border p-4 rounded-xl hover:border-green transition-colors">
+                                    <h4 class="text-white font-bold mb-1" data-i18n="step_2_title">القياس وتحديد الفجوة</h4>
+                                    <p class="text-gray-400 text-sm" data-i18n="step_2_desc">قياس القطر وتحديد الفجوة حول الغلاف.</p>
+                                </div>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="relative" data-aos="fade-in" data-aos-delay="300">
+                                <div class="absolute -start-[49px] top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border-2 border-green text-green font-bold text-sm shadow-[0_0_10px_rgba(16,185,129,0.4)] z-10">3</div>
+                                <div class="bg-slate-800 border border-gray-border p-4 rounded-xl hover:border-green transition-colors">
+                                    <h4 class="text-white font-bold mb-1" data-i18n="step_3_title">الحفر والإعداد</h4>
+                                    <p class="text-gray-400 text-sm" data-i18n="step_3_desc">حفر حول الغلاف إذا تطلب الأمر لإعداد الطبقة.</p>
+                                </div>
+                            </div>
+                            <!-- Step 4 -->
+                            <div class="relative" data-aos="fade-in" data-aos-delay="400">
+                                <div class="absolute -start-[49px] top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border-2 border-green text-green font-bold text-sm shadow-[0_0_10px_rgba(16,185,129,0.4)] z-10">4</div>
+                                <div class="bg-slate-800 border border-gray-border p-4 rounded-xl hover:border-green transition-colors">
+                                    <h4 class="text-white font-bold mb-1" data-i18n="step_4_title">صب مادة العزل</h4>
+                                    <p class="text-gray-400 text-sm" data-i18n="step_4_desc">بناء طبقة باستخدام الأسمنت النقي أو البنتونايت.</p>
+                                </div>
+                            </div>
+                            <!-- Step 5 -->
+                            <div class="relative" data-aos="fade-in" data-aos-delay="500">
+                                <div class="absolute -start-[49px] top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-slate-800 border-2 border-green text-green font-bold text-sm shadow-[0_0_10px_rgba(16,185,129,0.4)] z-10">5</div>
+                                <div class="bg-slate-800 border border-gray-border p-4 rounded-xl hover:border-green transition-colors">
+                                    <h4 class="text-white font-bold mb-1" data-i18n="step_5_title">إنشاء الحاجز</h4>
+                                    <p class="text-gray-400 text-sm" data-i18n="step_5_desc">إنشاء حاجز حول فوهة البئر لمنع تجمع المياه.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center max-w-3xl mx-auto" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="relative bg-slate-900 border border-gray-border rounded-2xl p-8 hover-green-glow transition-all duration-300 shadow-xl">
+                        <i class="fas fa-quote-right text-4xl text-green opacity-20 absolute top-4 end-6"></i>
+                        <p class="text-lg text-slate-300 italic mb-4 leading-relaxed relative z-10" data-i18n="well_test_desc">
+                            "خدمة ممتازة! بعد عزل البئر صار المي أنظف وما في أي طعم أو ريحة غريبة. أنصح بشدة بالتعامل معهم لاحترافيتهم العالية."
+                        </p>
+                        <div class="flex flex-col items-center justify-center gap-2">
+                            <div class="flex items-center gap-1 text-green text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-slate-500 text-xs" data-i18n="well_test_auth">تقييم أحد عملائنا الكرام</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-24 bg-slate-900 relative">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-green text-sm font-bold tracking-widest uppercase mb-2 block" data-i18n="serv_tag">باقة خدماتنا</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4" data-i18n="serv_title">خدمات صُممت <span class="text-gradient-green">بإتقان</span></h2>
+                    <div class="h-1 w-24 bg-green mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    
+                    <!-- Service 1 -->
+                    <div class="bg-slate-800 border border-gray-border rounded-2xl p-8 transition-all duration-300 hover-green-glow group cursor-pointer shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-border group-hover:border-green shadow-inner">
+                            <i class="fas fa-water text-2xl text-green"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green transition-colors" data-i18n="s1_t">تنظيف وتعقيم الآبار</h3>
+                        <p class="text-gray-text text-sm leading-relaxed" data-i18n="s1_d">تنظيف وتعقيم آبار وخزانات المياه بأحدث المواد الآمنة لضمان مياه نقية وصحية بنسبة 100%.</p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-slate-800 border border-gray-border rounded-2xl p-8 transition-all duration-300 hover-green-glow group cursor-pointer shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-border group-hover:border-green shadow-inner">
+                            <i class="fas fa-bug text-2xl text-green"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green transition-colors" data-i18n="s2_t">مكافحة حشرات البق</h3>
+                        <p class="text-gray-text text-sm leading-relaxed" data-i18n="s2_d">إبادة تامة لحشرات البق والقوارض باستخدام مبيدات فعالة ومرخصة بدون رائحة مزعجة.</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-slate-800 border border-gray-border rounded-2xl p-8 transition-all duration-300 hover-green-glow group cursor-pointer shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-border group-hover:border-green shadow-inner">
+                            <i class="fas fa-faucet-drip text-2xl text-green"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green transition-colors" data-i18n="s3_t">كشف تسريبات المياه</h3>
+                        <p class="text-gray-text text-sm leading-relaxed" data-i18n="s3_d">أجهزة إلكترونية حديثة لكشف تسريبات المياه والرطوبة بدون تكسير وبدقة متناهية.</p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="bg-slate-800 border border-gray-border rounded-2xl p-8 transition-all duration-300 hover-green-glow group cursor-pointer shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-border group-hover:border-green shadow-inner">
+                            <i class="fas fa-house-chimney-window text-2xl text-green"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green transition-colors" data-i18n="s4_t">تنظيف الشقق المفروشة</h3>
+                        <p class="text-gray-text text-sm leading-relaxed" data-i18n="s4_d">عناية فائقة بالشقق والفلل المفروشة، تلميع وتطهير شامل يعيد للمكان بريقه ورونقه.</p>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="bg-slate-800 border border-gray-border rounded-2xl p-8 transition-all duration-300 hover-green-glow group cursor-pointer shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-border group-hover:border-green shadow-inner">
+                            <i class="fas fa-gem text-2xl text-green"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green transition-colors" data-i18n="s5_t">جلي البلاط والرخام</h3>
+                        <p class="text-gray-text text-sm leading-relaxed" data-i18n="s5_d">تلميع وجلي الرخام والسيراميك بأحدث الماكينات لإزالة الخدوش وإعادة اللمعان الطبيعي.</p>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="bg-slate-800 border border-gray-border rounded-2xl p-8 transition-all duration-300 hover-green-glow group cursor-pointer shadow-lg" data-aos="fade-up" data-aos-delay="600">
+                        <div class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-border group-hover:border-green shadow-inner">
+                            <i class="fas fa-building text-2xl text-green"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green transition-colors" data-i18n="s6_t">تنظيف الواجهات</h3>
+                        <p class="text-gray-text text-sm leading-relaxed" data-i18n="s6_d">تنظيف احترافي للواجهات الزجاجية والحجرية للمباني الشاهقة باستخدام رافعات متطورة.</p>
+                    </div>
+
+                    <!-- Service 7 -->
+                    <div class="bg-slate-800 border border-gray-border rounded-2xl p-8 transition-all duration-300 hover-green-glow group cursor-pointer shadow-lg" data-aos="fade-up" data-aos-delay="700">
+                        <div class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-border group-hover:border-green shadow-inner">
+                            <i class="fas fa-couch text-2xl text-green"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green transition-colors" data-i18n="s7_t">التنظيف العميق للمفروشات</h3>
+                        <p class="text-gray-text text-sm leading-relaxed" data-i18n="s7_d">غسيل وتعقيم الكنب، السجاد، والموكيت بأجهزة البخار لإزالة البقع المستعصية والروائح.</p>
+                    </div>
+
+                    <!-- Service 8 -->
+                    <div class="bg-slate-800 border border-gray-border rounded-2xl p-8 transition-all duration-300 hover-green-glow group cursor-pointer shadow-lg" data-aos="fade-up" data-aos-delay="800">
+                        <div class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-border group-hover:border-green shadow-inner">
+                            <i class="fas fa-truck-moving text-2xl text-green"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green transition-colors" data-i18n="s8_t">نقل وتركيب الأثاث</h3>
+                        <p class="text-gray-text text-sm leading-relaxed" data-i18n="s8_d">خدمات فك، تغليف، نقل، وتركيب الأثاث بأمان تام مع ضمان الحفاظ عليه من أي خدوش.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="location" class="py-24 bg-slate-800 border-y border-gray-border">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    
+                    <div class="w-full lg:w-1/2 space-y-8" data-aos="fade-up">
+                        <div>
+                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="loc_title">متواجدون <span class="text-gradient-green">لخدمتكم</span></h2>
+                            <p class="text-gray-text text-lg" data-i18n="loc_desc">نغطّي كافة مناطق العاصمة عمان والمحافظات المجاورة لتلبية احتياجاتكم بأسرع وقت.</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-slate-900 border border-gray-border flex flex-shrink-0 items-center justify-center mt-1 shadow-inner">
+                                    <i class="fas fa-map-marker-alt text-green text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-1" data-i18n="loc_hq">المقر الرئيسي</h4>
+                                    <p class="text-gray-text" data-i18n="loc_addr">عمان، شارع مكة، بالقرب من دوار الواحة</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-slate-900 border border-gray-border flex flex-shrink-0 items-center justify-center mt-1 shadow-inner">
+                                    <i class="fas fa-phone text-green text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-1" data-i18n="loc_phone">الهاتف المباشر</h4>
+                                    <p class="text-gray-text ltr-text" dir="ltr">+962 79 000 0000</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900 rounded-2xl p-6 border-gradient-green relative overflow-hidden mt-8 shadow-lg">
+                            <div class="absolute -end-4 -top-4 text-green opacity-5">
+                                <i class="far fa-clock text-6xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-green mb-4 flex items-center gap-2">
+                                <i class="far fa-clock"></i> <span data-i18n="loc_hours">ساعات العمل</span>
+                            </h3>
+                            <ul class="space-y-3 text-slate-300">
+                                <li class="flex justify-between items-center border-b border-gray-border pb-2">
+                                    <span data-i18n="loc_days">السبت - الخميس</span>
+                                    <span class="font-bold text-white ltr-text" dir="ltr">08:00 AM - 08:00 PM</span>
+                                </li>
+                                <li class="flex justify-between items-center pt-2">
+                                    <span data-i18n="loc_friday">الجمعة</span>
+                                    <span class="font-bold text-green" data-i18n="loc_emerg">خدمة الطوارئ فقط</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-1/2 h-[500px] rounded-2xl overflow-hidden border border-gray-border shadow-[0_0_30px_rgba(16,185,129,0.1)] relative group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute inset-0 bg-slate-900 flex items-center justify-center -z-10">
+                            <i class="fas fa-spinner fa-spin text-green text-3xl"></i>
+                        </div>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d13536.43825700755!2d35.8451!3d31.9774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDU4JzM4LjYiTiAzNcKwNTAnNDIuNCJF!5e0!3m2!1sen!2sjo!4v1600000000000!5m2!1sen!2sjo" 
+                            class="w-full h-full border-0 map-filter transition-all duration-500 group-hover:filter-none" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 pt-16 pb-8 border-t border-gray-border relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <a href="#" class="flex items-center gap-2 mb-6">
+                        <i class="fas fa-shield-halved text-green text-2xl"></i>
+                        <span class="text-2xl font-bold text-gradient-green tracking-wider" data-i18n="brand_name">قمة الإبداع</span>
+                    </a>
+                    <p class="text-gray-text leading-relaxed text-sm" data-i18n="foot_desc">
+                        شريكك الموثوق لخدمات التعقيم والتنظيف والصيانة في الأردن. نلتزم بتقديم الجودة الفائقة والاهتمام بأدق التفاصيل لضمان رضا عملائنا التام.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-lg" data-i18n="foot_links">روابط سريعة</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#hero" class="text-gray-text hover:text-green transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-left rtl:fa-chevron-left ltr:fa-chevron-right text-[10px] text-green"></i><span data-i18n="nav_home">الرئيسية</span></a></li>
+                        <li><a href="#well-insulation" class="text-gray-text hover:text-green transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-left rtl:fa-chevron-left ltr:fa-chevron-right text-[10px] text-green"></i><span data-i18n="nav_well">عزل الآبار</span></a></li>
+                        <li><a href="#services" class="text-gray-text hover:text-green transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-left rtl:fa-chevron-left ltr:fa-chevron-right text-[10px] text-green"></i><span data-i18n="nav_services">خدماتنا المتنوعة</span></a></li>
+                        <li><a href="#location" class="text-gray-text hover:text-green transition-colors text-sm flex items-center gap-2"><i class="fas fa-chevron-left rtl:fa-chevron-left ltr:fa-chevron-right text-[10px] text-green"></i><span data-i18n="nav_location">فروعنا وموقعنا</span></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-lg" data-i18n="foot_contact">تواصل معنا</h4>
+                    <div class="flex gap-4 mb-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 border border-gray-border flex items-center justify-center text-gray-text hover:text-green hover:border-green transition-all shadow-inner">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 border border-gray-border flex items-center justify-center text-gray-text hover:text-green hover:border-green transition-all shadow-inner">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 border border-gray-border flex items-center justify-center text-gray-text hover:text-green hover:border-green transition-all shadow-inner">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <a href="mailto:info@qimat-alebda3.com" class="text-gray-text hover:text-green transition-colors text-sm flex items-center gap-2">
+                        <i class="far fa-envelope"></i> info@qimat-alebda3.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-border pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-text text-sm" data-i18n="foot_copy">
+                    &copy; 2026 قمة الإبداع لخدمات التعقيم والصيانة. جميع الحقوق محفوظة.
+                </p>
+                <p class="text-gray-text text-sm" data-i18n="foot_made">
+                    صُمم باحترافية لعملائنا المميزين
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-6 end-6 z-50 flex flex-col gap-4">
+        <a href="https://wa.me/962790000000" target="_blank" class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 relative group">
+            <i class="fab fa-whatsapp text-3xl"></i>
+            <span class="absolute end-full me-4 bg-slate-800 text-white text-xs px-3 py-1.5 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-gray-border pointer-events-none" data-i18n="fab_wa">
+                تواصل عبر واتساب
+            </span>
+        </a>
+        
+        <a href="tel:+962790000000" class="btn-pulse w-14 h-14 rounded-full bg-green-gradient text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 relative group">
+            <i class="fas fa-phone-alt text-2xl"></i>
+            <span class="absolute end-full me-4 bg-slate-800 text-white text-xs px-3 py-1.5 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-gray-border pointer-events-none" data-i18n="fab_call">
+                اتصل بنا الآن
+            </span>
+        </a>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 50,
+            });
+        });
+
+        // Translation Dictionary
+        const translations = {
+            ar: {
+                page_title: "قمة الإبداع | لخدمات التعقيم والتنظيف والصيانة الفاخرة في عمان",
+                brand_name: "قمة الإبداع",
+                brand_sub: "خدمات التعقيم والصيانة",
+                nav_home: "الرئيسية",
+                nav_well: "عزل الآبار",
+                nav_services: "خدماتنا",
+                nav_location: "الموقع ومواعيد العمل",
+                nav_call: "اتصل بنا الآن",
+                hero_title: "الرفاهية في <span class='text-gradient-green'>النظافة والصيانة</span>",
+                hero_desc: 'نقدم لك في "قمة الإبداع" حلولاً متكاملة بأعلى معايير الجودة والاحترافية. من التعقيم العميق إلى الصيانة الدقيقة، نحن هنا لنجعل بيئتك أكثر نقاءً وصحة.',
+                hero_btn_call: "طلب خدمة فورية",
+                hero_btn_explore: "استكشف خدماتنا",
+                scroll_down: "اكتشف المزيد",
+                well_tag: "خدمة احترافية جديدة",
+                well_title: "عزل آبار المياه <span class='text-gradient-green'>في الأردن</span>",
+                well_desc: "نعمل على عزل آبار المياه لمنع تسرب المياه السطحية والملوثات، والحفاظ على جودة المياه لبيئة نظيفة وصحية وآمنة لعائلتك.",
+                well_why_title: "لماذا يجب عزل البئر؟",
+                well_why_1: "حماية من التلوث والسلوكيات البيئية الضارة.",
+                well_why_2: "ضمان جودة المياه وصحة الأسرة.",
+                well_why_3: "الامتثال للمعايير الصحية والمحلية.",
+                well_feat_title: "مميزات خدماتنا في العزل",
+                well_feat_1: "استخدام مواد عالية الجودة (الأسمنت النقي، البنتونايت) وطرق احترافية.",
+                well_feat_2: "خبرة محلية في الأردن مع مراعاة المعايير الصحية.",
+                well_feat_3: "خدمة ما بعد العزل لضمان التثبيت الجيد والسلامة.",
+                well_steps_title: "خطوات عزل البئر الاحترافية",
+                step_1_title: "التقييم الأولي",
+                step_1_desc: "تقييم أولي لحالة البئر وعمقه.",
+                step_2_title: "القياس وتحديد الفجوة",
+                step_2_desc: "قياس القطر وتحديد الفجوة حول الغلاف.",
+                step_3_title: "الحفر والإعداد",
+                step_3_desc: "حفر حول الغلاف إذا تطلب الأمر لإعداد الطبقة.",
+                step_4_title: "صب مادة العزل",
+                step_4_desc: "بناء طبقة باستخدام الأسمنت النقي أو البنتونايت.",
+                step_5_title: "إنشاء الحاجز",
+                step_5_desc: "إنشاء حاجز حول فوهة البئر لمنع تجمع المياه.",
+                well_test_desc: '"خدمة ممتازة! بعد عزل البئر صار المي أنظف وما في أي طعم أو ريحة غريبة. أنصح بشدة بالتعامل معهم لاحترافيتهم العالية."',
+                well_test_auth: "تقييم أحد عملائنا الكرام",
+                serv_tag: "باقة خدماتنا",
+                serv_title: "خدمات صُممت <span class='text-gradient-green'>بإتقان</span>",
+                s1_t: "تنظيف وتعقيم الآبار", s1_d: "تنظيف وتعقيم آبار وخزانات المياه بأحدث المواد الآمنة لضمان مياه نقية وصحية بنسبة 100%.",
+                s2_t: "مكافحة حشرات البق", s2_d: "إبادة تامة لحشرات البق والقوارض باستخدام مبيدات فعالة ومرخصة بدون رائحة مزعجة.",
+                s3_t: "كشف تسريبات المياه", s3_d: "أجهزة إلكترونية حديثة لكشف تسريبات المياه والرطوبة بدون تكسير وبدقة متناهية.",
+                s4_t: "تنظيف الشقق المفروشة", s4_d: "عناية فائقة بالشقق والفلل المفروشة، تلميع وتطهير شامل يعيد للمكان بريقه ورونقه.",
+                s5_t: "جلي البلاط والرخام", s5_d: "تلميع وجلي الرخام والسيراميك بأحدث الماكينات لإزالة الخدوش وإعادة اللمعان الطبيعي.",
+                s6_t: "تنظيف الواجهات", s6_d: "تنظيف احترافي للواجهات الزجاجية والحجرية للمباني الشاهقة باستخدام رافعات متطورة.",
+                s7_t: "التنظيف العميق للمفروشات", s7_d: "غسيل وتعقيم الكنب، السجاد، والموكيت بأجهزة البخار لإزالة البقع المستعصية والروائح.",
+                s8_t: "نقل وتركيب الأثاث", s8_d: "خدمات فك، تغليف، نقل، وتركيب الأثاث بأمان تام مع ضمان الحفاظ عليه من أي خدوش.",
+                loc_title: "متواجدون <span class='text-gradient-green'>لخدمتكم</span>",
+                loc_desc: "نغطّي كافة مناطق العاصمة عمان والمحافظات المجاورة لتلبية احتياجاتكم بأسرع وقت.",
+                loc_hq: "المقر الرئيسي",
+                loc_addr: "عمان، شارع مكة، بالقرب من دوار الواحة",
+                loc_phone: "الهاتف المباشر",
+                loc_hours: "ساعات العمل",
+                loc_days: "السبت - الخميس",
+                loc_friday: "الجمعة",
+                loc_emerg: "خدمة الطوارئ فقط",
+                foot_desc: "شريكك الموثوق لخدمات التعقيم والتنظيف والصيانة في الأردن. نلتزم بتقديم الجودة الفائقة والاهتمام بأدق التفاصيل لضمان رضا عملائنا التام.",
+                foot_links: "روابط سريعة",
+                foot_contact: "تواصل معنا",
+                foot_copy: "© 2026 قمة الإبداع لخدمات التعقيم والصيانة. جميع الحقوق محفوظة.",
+                foot_made: "صُمم باحترافية لعملائنا المميزين",
+                fab_wa: "تواصل عبر واتساب",
+                fab_call: "اتصل بنا الآن"
+            },
+            en: {
+                page_title: "Qimat Al-Ebda3 | Premium Sterilization & Cleaning in Amman",
+                brand_name: "Qimat Al-Ebda3",
+                brand_sub: "Sterilization & Maintenance",
+                nav_home: "Home",
+                nav_well: "Well Insulation",
+                nav_services: "Services",
+                nav_location: "Location & Hours",
+                nav_call: "Call Us Now",
+                hero_title: "Luxury in <span class='text-gradient-green'>Cleaning & Maintenance</span>",
+                hero_desc: "At 'Qimat Al-Ebda3', we offer integrated solutions with the highest standards of quality. From deep sterilization to precise maintenance, we make your environment purer and healthier.",
+                hero_btn_call: "Request Immediate Service",
+                hero_btn_explore: "Explore Services",
+                scroll_down: "Discover More",
+                well_tag: "New Professional Service",
+                well_title: "Water Well Insulation <span class='text-gradient-green'>in Jordan</span>",
+                well_desc: "We insulate water wells to prevent surface water and pollutant leakage, preserving water quality for a clean, healthy, and safe environment for your family.",
+                well_why_title: "Why Insulate The Well?",
+                well_why_1: "Protection from pollution and harmful environmental behaviors.",
+                well_why_2: "Ensuring water quality and family health.",
+                well_why_3: "Compliance with health and local standards.",
+                well_feat_title: "Features of Our Insulation Service",
+                well_feat_1: "Use of high-quality materials (pure cement, bentonite) and professional methods.",
+                well_feat_2: "Local expertise in Jordan with strict adherence to health standards.",
+                well_feat_3: "Post-insulation service to ensure proper setting and safety.",
+                well_steps_title: "Professional Well Insulation Steps",
+                step_1_title: "Initial Assessment",
+                step_1_desc: "Initial evaluation of the well's condition and depth.",
+                step_2_title: "Measurement & Gap Identification",
+                step_2_desc: "Measuring diameter and identifying the gap around the casing.",
+                step_3_title: "Drilling & Preparation",
+                step_3_desc: "Drilling around the casing if required to prepare the layer.",
+                step_4_title: "Pouring Insulation Material",
+                step_4_desc: "Building a layer using pure cement or bentonite.",
+                step_5_title: "Creating a Barrier",
+                step_5_desc: "Creating a berm around the wellhead to prevent water pooling.",
+                well_test_desc: '"Excellent service! After insulating the well, the water became cleaner with no strange taste or smell. I highly recommend dealing with them for their high professionalism."',
+                well_test_auth: "Review from one of our valued clients",
+                serv_tag: "Our Services Package",
+                serv_title: "Services Designed <span class='text-gradient-green'>with Perfection</span>",
+                s1_t: "Well & Tank Cleaning", s1_d: "Cleaning and sterilizing water wells and tanks with the latest safe materials to ensure 100% pure water.",
+                s2_t: "Bed Bug Pest Control", s2_d: "Complete extermination of bed bugs and rodents using effective, licensed, and odorless pesticides.",
+                s3_t: "Water Leak Detection", s3_d: "Modern electronic devices to detect water leaks and moisture without breaking walls, with extreme accuracy.",
+                s4_t: "Furnished Apt Cleaning", s4_d: "Exceptional care for furnished apartments and villas, comprehensive polishing and disinfection.",
+                s5_t: "Tile & Marble Polishing", s5_d: "Polishing marble and ceramics with the latest machines to remove scratches and restore natural shine.",
+                s6_t: "Facade Cleaning", s6_d: "Professional cleaning for glass and stone facades of high-rise buildings using advanced cranes.",
+                s7_t: "Deep Furniture Cleaning", s7_d: "Washing and sterilizing sofas and carpets with steam machines to remove stubborn stains.",
+                s8_t: "Furniture Moving", s8_d: "Dismantling, packaging, moving, and installing furniture safely, ensuring it is scratch-free.",
+                loc_title: "Available <span class='text-gradient-green'>to Serve You</span>",
+                loc_desc: "We cover all areas of Amman and neighboring governorates to meet your needs ASAP.",
+                loc_hq: "Headquarters",
+                loc_addr: "Amman, Mecca Street, near Waha Circle",
+                loc_phone: "Direct Phone",
+                loc_hours: "Working Hours",
+                loc_days: "Saturday - Thursday",
+                loc_friday: "Friday",
+                loc_emerg: "Emergency Service Only",
+                foot_desc: "Your trusted partner for sterilization, cleaning, and maintenance in Jordan. Committed to premium quality.",
+                foot_links: "Quick Links",
+                foot_contact: "Contact Us",
+                foot_copy: "© 2026 Qimat Al-Ebda3. All rights reserved.",
+                foot_made: "Professionally designed for our VIP clients",
+                fab_wa: "Contact via WhatsApp",
+                fab_call: "Call Us Now"
+            }
+        };
+
+        let currentLang = 'ar';
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const root = document.getElementById('html-root');
+            
+            // Toggle Direction and Lang
+            root.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            root.lang = currentLang;
+
+            // Update all elements with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+            
+            // Update switch button text
+            document.getElementById('lang-switch-text').innerText = currentLang === 'ar' ? 'English' : 'العربية';
+
+            // Refresh AOS to recalculate positions after layout change
+            setTimeout(() => {
+                AOS.refresh();
+            }, 300);
+        }
+    </script>
+</body>
+</html>
